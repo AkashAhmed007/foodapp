@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 export default function Search({foodData,setFoodData}) {
-    const [query,setQuery] = useState('pasta')
+    const [query,setQuery] = useState('pizza')
     const URL = "https://api.spoonacular.com/recipes/complexSearch"
     const apiKey = "6fbe90afd81e4c04ae56de738d978b43"
     useEffect(()=>{
@@ -15,6 +15,7 @@ export default function Search({foodData,setFoodData}) {
   return (
     <div>
         <input onChange={(e)=>setQuery(e.target.value)} type="text" value={query}/>
+     
     </div>
   )
 }
