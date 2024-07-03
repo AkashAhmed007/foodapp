@@ -1,12 +1,14 @@
 import styles from "./fooditem.module.css"
-export default function FoodListItem({food}) {
+export default function FoodListItem({food,setFoodId}) {
   return (
     <div className={styles.itemContainer}>
         <img className={styles.itemImage} src={food.image} alt="" />
         <div className={styles.itemContent}>
             <p className={styles.itemName}>{food.title}</p>
         </div>
-        <div className={styles.buttonContainer}><button className={styles.itemButton}>View Recipe</button></div>
+        <div className={styles.buttonContainer}>
+          <button onClick={()=>setFoodId(food.id)} className={styles.itemButton}>View Recipe</button>
+        </div>
     </div>
   )
 }
